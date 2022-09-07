@@ -6,15 +6,14 @@ interface ICreateCategoryDTO{
     description:string
 }
 
-class CategoriesRepositories{
+class CategoryRepositories{
     private categories: Category[];
 
     constructor(){
         this.categories=[];
     }
 
-    create({name,description}:ICreateCategoryDTO):void{
-
+    create({description,name}:ICreateCategoryDTO):void{
         const category = new Category;
 
         Object.assign(category, {
@@ -23,8 +22,14 @@ class CategoriesRepositories{
             create_at: new Date()
         });
 
+        console.log(name);
+
         this.categories.push(category);
+    }
+
+    list():Category[] {
+        return this.categories;
     }
 }
 
-export {CategoriesRepositories};
+export {CategoryRepositories};
