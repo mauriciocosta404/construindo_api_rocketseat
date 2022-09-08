@@ -22,13 +22,17 @@ class CategoryRepositories{
             create_at: new Date()
         });
 
-        console.log(name);
-
         this.categories.push(category);
     }
 
     list():Category[] {
         return this.categories;
+    }
+
+    findByName(name:string):Category |any {
+        const category=this.categories.find((category)=>category.name===name);
+        
+        return category;
     }
 }
 
