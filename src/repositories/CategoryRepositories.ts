@@ -29,8 +29,8 @@ class CategoryRepositories{
         return this.categories;
     }
 
-    findByName(name:string):Category |any {
-        const category=this.categories.find((category)=>category.name===name);
+    findByName(name:string):boolean  {
+        const category=this.categories.some((category)=>category.name===name);
         
         return category;
     }
