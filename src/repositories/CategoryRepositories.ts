@@ -21,7 +21,7 @@ class CategoryRepositories{
             description,
             create_at: new Date()
         });
-
+        
         this.categories.push(category);
     }
 
