@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { CategoryRepositories } from "../repositories/CategoryRepositories";
-import { PostegresCategoriesRepository } from "../repositories/PostegresCategoriesRepository";
+import { CategoryRepositories } from "../modules/cars/repositories/CategoryRepositories";
+import { PostegresCategoriesRepository } from "../modules/cars/repositories/PostegresCategoriesRepository";
 import { CreateCategoryService } from "../modules/cars/services/CreateCategoryService";
 
 const categoriesRoutes=Router();
