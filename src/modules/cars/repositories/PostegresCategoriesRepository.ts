@@ -1,4 +1,4 @@
-import { Category } from "../model/category";
+import { Category } from "../modules/cars/model/category";
 import { ICategoriesRepository,ICreateCategoryDTO } from "./ICategoriesRepository";
 
 class PostegresCategoriesRepository implements ICategoriesRepository{
