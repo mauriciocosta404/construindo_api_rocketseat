@@ -1,14 +1,21 @@
 import { Category } from "../../model/category";
 import { ICategoriesRepository,ICreateCategoryDTO } from "../ICategoriesRepository";
 
-// DTO data transfer object- objecto criado para transferir dados
-
 class CategoryRepositories implements ICategoriesRepository{
 
     private categories: Category[];
 
-    constructor(){
+    private static INSTANCE:CategoryRepositories;
+
+    private constructor(){
         this.categories=[];
+    }
+
+    public static getInstance():CategoryRepositories{
+        if(!CategoryRepositories.INSTANCE){
+            CategoryRepositories.INSTANCE=new CategoryRepositories();
+        }
+        return CategoryRepositories.INSTANCE;
     }
 
     create({description,name}:ICreateCategoryDTO):void{
