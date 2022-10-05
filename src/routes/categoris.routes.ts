@@ -3,7 +3,7 @@ import { CategoryRepositories } from "../modules/cars/repositories/implementatio
 import { PostegresCategoriesRepository } from "../modules/cars/repositories/implementations/PostegresCategoriesRepository";
 import { createCategoryController } from "../modules/cars/useCases/createCategory";
 import { CreateCategoryUseCase } from "../modules/cars/useCases/createCategory/CreateCategoryUseCase";
-import { listCategoriesController } from "../modules/cars/useCases/createCategory/listCategories";
+import { listCategoriesController } from "../modules/cars/useCases/listCategories";
 
 const categoriesRoutes=Router();
 

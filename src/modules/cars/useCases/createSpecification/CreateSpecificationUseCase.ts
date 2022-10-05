@@ -1,5 +1,6 @@
-import { ISpecificationsRepository, ICreateSpecificationDTO } from '../repositories/ISpecificationsRepository';
-export class CreateEspecificationService{
+import { ISpecificationsRepository, ICreateSpecificationDTO } from '../../repositories/ISpecificationsRepository';
+
+export class CreateSpecificationUseCase{
     constructor(private specificationsRepository: ISpecificationsRepository){}
     async execute({name,description}:ICreateSpecificationDTO){
         const specificationAlreadyExists= this.specificationsRepository.findByName(name);
