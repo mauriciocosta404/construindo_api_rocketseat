@@ -1,5 +1,5 @@
-import { Category } from "../model/category";
-import { ICategoriesRepository,ICreateCategoryDTO } from "./ICategoriesRepository";
+import { Category } from "../../model/category";
+import { ICategoriesRepository,ICreateCategoryDTO } from "../ICategoriesRepository";
 
 class PostegresCategoriesRepository implements ICategoriesRepository{
     findByName(name: string): boolean {
