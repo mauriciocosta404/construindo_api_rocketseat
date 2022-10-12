@@ -7,20 +7,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model courses {
+model Courses {
   id            String      @id @default(uuid())
   name          String      @unique
   description   String?
   duration      Int
-  created_at    DateTime @default(now())  
+  created_at    DateTime    @default(now())  
+  teacher       Teachers    @relation(fields: [fk_id_teacher], references: [id])
+  fk_id_teacher String      @unique
 
-    @@map("course")
+    @@map("courses")
 }
 
-model modules{
+model Teachers{
+    id            String      @id @default(uuid())
+    name          String      @unique
+    course        Courses? 
+
+    @@map("teachers")
+}
+model Modules{
     id          String      @id @default(uuid())
     name        String      @unique
     description String?  
     created_at  DateTime?    @default(now())
-}
+
+    @@map("modules")
+ }
 
