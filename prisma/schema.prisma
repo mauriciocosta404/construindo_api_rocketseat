@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model courses {
+  id            String      @id @default(uuid())
+  name          String      @unique
+  description   String?
+  duration      Int
+  created_at    DateTime @default(now())  
+
+    @@map("course")
+}
+
+model modules{
+    id          String      @id @default(uuid())
+    name        String      @unique
+    description String?  
+    created_at  DateTime?    @default(now())
+}
+
